@@ -1,4 +1,4 @@
-module github.com/raloz/toolbox
+module github.com/raloz/suitetalk
 
 go 1.22.2
 

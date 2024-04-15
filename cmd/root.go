@@ -9,7 +9,7 @@ import (
 
 	"github.com/spf13/cobra"
 
-	"github.com/raloz/toolbox/cmd/post"
+	"github.com/raloz/suitetalk/cmd/post"
 )
 
 var rootCmd = &cobra.Command{
