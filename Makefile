@@ -14,9 +14,11 @@ build:
 .PHONY: run
 run: build
 	./bin/${BINARY_NAME}
+	@echo "\n> removing the bin file ./bin/suitetalk"
+	@make clean
 
 ## crean: remove the bin file 
 .PHONY: clean
 clean:
-	go clean
+	@go clean
 	rm ./bin/${BINARY_NAME}
