@@ -6,7 +6,7 @@ import (
 	"net/url"
 	"strings"
 
-	"github.com/raloz/suitetalk/pkg/netsuite/oauth"
+	"github.com/raloz/suitetalk/internal/netsuite/oauth"
 )
 
 type netsuite struct {

@@ -9,8 +9,8 @@ import (
 	"net/http"
 	"os"
 
-	"github.com/raloz/suitetalk/pkg/netsuite"
-	"github.com/raloz/suitetalk/pkg/netsuite/oauth"
+	"github.com/raloz/suitetalk/internal/netsuite"
+	"github.com/raloz/suitetalk/internal/netsuite/oauth"
 	"github.com/spf13/cobra"
 )
 
