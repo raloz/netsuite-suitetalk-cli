@@ -24,7 +24,9 @@ and navigate dynamically between records.
 > Get and process the API definition record metadata.
 > Execute NetSuite queries and records.`,
 
-	Run: func(cmd *cobra.Command, args []string) {},
+	Run: func(cmd *cobra.Command, args []string) {
+		cmd.Help()
+	},
 }
 
 func Execute() {
