@@ -17,8 +17,21 @@ run: build
 	@echo "\n> removing the bin file ./bin/suitetalk"
 	@make clean
 
-## crean: remove the bin file 
+## clean: remove the bin file 
 .PHONY: clean
 clean:
 	@go clean
 	rm ./bin/${BINARY_NAME}
+
+#---------------------------------------
+#|       Dummy Commands for Test       |
+#---------------------------------------
+.PHONY: config\:account
+config\:account: build
+	@./bin/${BINARY_NAME} config account --name sandbox --passport 'account=23423_SB1,cosumer-secret="consumersecret",consumer-key="consumerkey",token-id="tokenid", token-secret="tokensecret"' || echo "Error en la ejecución de ./bin/${BINARY_NAME}"
+	@make clean
+
+.PHONY: create\:vendor
+create\:vendor: build
+	@./bin/${BINARY_NAME} post --type vendor --data '{}' || echo "Error en la ejecución de ./bin/${BINARY_NAME}"
+	@make clean
