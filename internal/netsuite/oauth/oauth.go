@@ -71,8 +71,6 @@ func CreateAuthorizationHeader(method, baseUrl string, q []string, config Config
 		url.QueryEscape(base64.StdEncoding.EncodeToString(signature)),
 	)
 
-	fmt.Println(auth)
-
 	return auth
 }
 
@@ -83,5 +81,6 @@ func generateNonce() string {
 	for i := range nonce {
 		nonce[i] = charset[rand.Intn(len(charset))]
 	}
+
 	return string(nonce)
 }
