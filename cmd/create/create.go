@@ -1,7 +1,7 @@
 /*
 Copyright © 2024 Octavio Quiroz <octavioquiroz30@gmail.com>
 */
-package post
+package create
 
 import (
 	"fmt"
@@ -14,9 +14,9 @@ import (
 var recordType string
 var data string
 
-// postCmd represents the post command
-var PostCmd = &cobra.Command{
-	Use:   "post",
+// CreateCmd represents the post command
+var CreateCmd = &cobra.Command{
+	Use:   "create",
 	Short: "Send a POST request to NetSuite",
 	Long: `Create a brand new record sending a POST request just indicating 
 the record type and the payload`,
@@ -35,11 +35,11 @@ the record type and the payload`,
 }
 
 func init() {
-	PostCmd.Flags().StringVarP(&recordType, "type", "t", "", "record type to create [customer, vendor, employee, item, etc]")
-	PostCmd.Flags().StringVarP(&data, "data", "d", "", "payload for send as request body to netsuite")
+	CreateCmd.Flags().StringVarP(&recordType, "type", "t", "", "record type to create [customer, vendor, employee, item, etc]")
+	CreateCmd.Flags().StringVarP(&data, "data", "d", "", "payload for send as request body to netsuite")
 
-	PostCmd.MarkFlagRequired("type")
-	PostCmd.MarkFlagRequired("data")
+	CreateCmd.MarkFlagRequired("type")
+	CreateCmd.MarkFlagRequired("data")
 }
 
 func getEndpoint(recordType string) (string, error) {

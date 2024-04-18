@@ -7,9 +7,8 @@ import (
 	"fmt"
 	"os"
 
+	"github.com/raloz/suitetalk/cmd/create"
 	"github.com/spf13/cobra"
-
-	"github.com/raloz/suitetalk/cmd/post"
 )
 
 var rootCmd = &cobra.Command{
@@ -37,5 +36,5 @@ func Execute() {
 }
 
 func init() {
-	rootCmd.AddCommand(post.PostCmd)
+	rootCmd.AddCommand(create.CreateCmd)
 }

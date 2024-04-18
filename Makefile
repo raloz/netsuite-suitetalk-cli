@@ -33,5 +33,5 @@ config\:account: build
 
 .PHONY: create\:vendor
 create\:vendor: build
-	@./bin/${BINARY_NAME} post --type vendor --data '{}' || echo "Error en la ejecución de ./bin/${BINARY_NAME}"
+	@./bin/${BINARY_NAME} create --type vendor --data '{}' || echo "Error en la ejecución de ./bin/${BINARY_NAME}"
 	@make clean
