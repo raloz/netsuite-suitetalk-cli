@@ -7,6 +7,7 @@ import (
 	"fmt"
 	"os"
 
+	"github.com/raloz/suitetalk/cmd/config"
 	"github.com/raloz/suitetalk/cmd/create"
 	"github.com/spf13/cobra"
 )
@@ -46,4 +47,5 @@ func Execute() {
 
 func init() {
 	rootCmd.AddCommand(create.CreateCmd)
+	rootCmd.AddCommand(config.ConfigCmd)
 }
