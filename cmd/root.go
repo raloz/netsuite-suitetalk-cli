@@ -13,17 +13,26 @@ import (
 
 var rootCmd = &cobra.Command{
 	Use:   "suitetalk",
-	Short: "suitetalk - a simple CLI for REST communication with NetSuite",
-	Long: `suitetalk is a simple CLI for REST communication with NetSuite
-	
-Using suitetalk, you can:
+	Short: "suitetalk - a simple CLI for RESTful communication with NetSuite",
+	Long: `Suitetalk CLI is a simple http client in your terminal to send request to NetSuite.
+It allows you manage your connections to your NetSuite instances (almost similar to postman envs),
+you can send CRUD requests to make any action as NetSuite Suitetalk Rest allows.
 
-> Use CRUD (create, read, update and delete) operations to perform business processing on NetSuite records
-and navigate dynamically between records.
-> Get and process the API definition record metadata.
-> Execute NetSuite queries and records.`,
-
+With the suitetalk cli commands you can manage your connections, create, update, delete, and copy
+record and transactions.`,
 	Run: func(cmd *cobra.Command, args []string) {
+		cmd.SetUsageTemplate(`Usage:
+suitetalk [command]
+
+Available Commands:
+create      Send a POST request to NetSuite
+help        Help about any command
+
+Flags:
+-h, --help   help for suitetalk
+
+Use "suitetalk [command] --help" for more information about a command.
+`)
 		cmd.Help()
 	},
 }
